@@ -7,9 +7,9 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
-  GAR_LOCATION: ap-southeast1
+  GAR_LOCATION: asia-southeast1
   GKE_CLUSTER: cluster-1
-  GKE_ZONE: ap-southeast1-a   
+  GKE_ZONE: asia-southeast1-a   
   DEPLOYMENT_NAME: gke-test 
   REPOSITORY: samples 
   IMAGE: static-site
