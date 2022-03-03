@@ -54,9 +54,9 @@ jobs:
     # Build the Docker image
     - name: Build
       run: |-
-        docker build -t "$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/multi-client/multi-client:$GITHUB_SHA" 
-        docker build -t "$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/multi-server-pgfix-5-11/multi-server:$GITHUB_SHA"  
-        docker build -t "$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/multi-worker/multi-worker:$GITHUB_SHA" 
+        docker build -t "$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/multi-client/multi-client:$GITHUB_SHA" -f .client/Dockerfile ./client
+        docker build -t "$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/multi-server-pgfix-5-11/multi-server:$GITHUB_SHA" -f ./server/Dockerfile ./server
+        docker build -t "$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/multi-worker/multi-worker:$GITHUB_SHA" -f ./worker/Dockerfile ./worker
       
     # - name: Build
     #   run: |-
